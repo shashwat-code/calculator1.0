@@ -1,24 +1,633 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calculator1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yKP-Xc-p2a">
+                                <rect key="frame" x="10" y="5" width="394" height="871"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="9Ha-Re-Jun">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="93"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2cU-q0-sc5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="DC5-rC-CDE">
+                                        <rect key="frame" x="0.0" y="97" width="394" height="93.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-50-fhn">
+                                        <rect key="frame" x="0.0" y="194.5" width="394" height="93"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgW-27-h5X" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="93"/>
+                                                <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="37"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clearAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7c-V9-fqv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa7-Nf-hbm" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="101.5" y="0.0" width="90" height="93"/>
+                                                <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P4c-sb-DgP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDF-Q4-O2a" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="202.5" y="0.0" width="90.5" height="93"/>
+                                                <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="π">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ihw-fg-nSu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-fh-tAX" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="304" y="0.0" width="90" height="93"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                                <state key="normal" title="±">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aN7-OL-azB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="pRO-ex-OZh">
+                                        <rect key="frame" x="0.0" y="291.5" width="394" height="93.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-IL-PfW" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.1043583263050426" green="0.1043583263050426" blue="0.1043583263050426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="36"/>
+                                                <state key="normal" title="X⁻¹">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="37"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssW-8t-bAz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWG-vf-4YG" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="101.5" y="0.0" width="90" height="93.5"/>
+                                                <color key="backgroundColor" red="0.1043583263050426" green="0.1043583263050426" blue="0.1043583263050426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="∛">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IjR-RS-jZt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgD-5t-GWl" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="202.5" y="0.0" width="90.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.1043583263050426" green="0.1043583263050426" blue="0.1043583263050426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                                <state key="normal" title="∜">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgq-5I-3xX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-gD-MbV" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="304" y="0.0" width="90" height="93.5"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <state key="normal" title="√">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lp9-Qi-lCG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-01-hhH">
+                                        <rect key="frame" x="0.0" y="389" width="394" height="93"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGg-6O-tzd" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="93"/>
+                                                <color key="backgroundColor" red="0.086262829599999993" green="0.086281977590000003" blue="0.086258627470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <state key="normal" title="sin">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76N-xK-cPb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzr-yc-C0H" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="103" y="0.0" width="85.5" height="93"/>
+                                                <color key="backgroundColor" red="0.086262829599999993" green="0.086281977590000003" blue="0.086258627470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="cos">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3xD-51-ShR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxo-pv-ZFX" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="205.5" y="0.0" width="86" height="93"/>
+                                                <color key="backgroundColor" red="0.086262829599999993" green="0.086281977590000003" blue="0.086258627470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="tan">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z7L-eO-52f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-H0-IIW" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="308.5" y="0.0" width="85.5" height="93"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5rP-CI-FJc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-tY-QiM">
+                                        <rect key="frame" x="0.0" y="486" width="394" height="93.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyi-CE-q8r" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEi-0H-JhZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xX-TJ-w6F" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="102.5" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.1575268507" green="0.16041374210000001" blue="0.15704050659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3sh-je-Kq4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtc-EQ-Fm0" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="205" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.1575268507" green="0.16041374210000001" blue="0.15704050659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Ng-BB-79R"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYU-g7-Wjh" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="307.5" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="69"/>
+                                                <state key="normal" title="×">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovH-oz-0zJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kZ5-Qs-IMx">
+                                        <rect key="frame" x="0.0" y="583.5" width="394" height="93"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbS-R1-Uen" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iax-HR-TdP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7n-dp-R46" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="102.5" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NpZ-4V-FNz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyp-rn-jiP" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="205" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLX-IF-DEI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS7-Hn-jgd" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="307.5" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                <state key="normal" title="−">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWv-p7-uqj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LwL-8j-aAp">
+                                        <rect key="frame" x="0.0" y="680.5" width="394" height="93.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-ej-Dcf" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RUG-uf-YFX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjd-bF-CA1" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="102.5" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yjl-Zd-gii"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6A-4i-aOa" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="205" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xcP-Ld-Opl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TW-Yt-D5n" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="307.5" y="0.0" width="86.5" height="93.5"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gKU-Ih-mUc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="248" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="f84-mm-1nz">
+                                        <rect key="frame" x="0.0" y="778" width="394" height="93"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmM-Ny-g0j" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" red="0.1575268507" green="0.16041374210000001" blue="0.15704050659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuH-S3-W66"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgq-3G-SdV" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="102.5" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" red="0.1575268507" green="0.16041374210000001" blue="0.15704050659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T6b-Ow-PkQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6C-oK-a1C" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="205" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" red="0.1575268507" green="0.16041374210000001" blue="0.15704050659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="e">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="52K-nH-Wyb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QT-Tt-ynH" customClass="RoundButton" customModule="calculator1_0" customModuleProvider="target">
+                                                <rect key="frame" x="307.5" y="0.0" width="86.5" height="93"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HFJ-4S-PAo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yKP-Xc-p2a" secondAttribute="trailing" constant="10" id="61j-rk-rz4"/>
+                            <constraint firstAttribute="bottom" secondItem="yKP-Xc-p2a" secondAttribute="bottom" constant="20" id="G5B-lq-jB8"/>
+                            <constraint firstItem="yKP-Xc-p2a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="5" id="VeB-pr-0uC"/>
+                            <constraint firstItem="yKP-Xc-p2a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="gpt-PN-CIa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="desc" destination="9Ha-Re-Jun" id="K9c-Ug-shP"/>
+                        <outlet property="result" destination="DC5-rC-CDE" id="Umv-4e-1vE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1268" y="122"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0TW-Yt-D5n">
+            <size key="intrinsicContentSize" width="38" height="86"/>
+        </designable>
+        <designable name="1xX-TJ-w6F">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="7QT-Tt-ynH">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="8gr-gD-MbV">
+            <size key="intrinsicContentSize" width="30" height="70"/>
+        </designable>
+        <designable name="FbS-R1-Uen">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="G7n-dp-R46">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="Jgq-3G-SdV">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="KDF-Q4-O2a">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="Mtc-EQ-Fm0">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="Nkr-H0-IIW">
+            <size key="intrinsicContentSize" width="41" height="91"/>
+        </designable>
+        <designable name="OgW-27-h5X">
+            <size key="intrinsicContentSize" width="48" height="55"/>
+        </designable>
+        <designable name="VGg-6O-tzd">
+            <size key="intrinsicContentSize" width="45" height="55"/>
+        </designable>
+        <designable name="WWG-vf-4YG">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="Wyp-rn-jiP">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="b6C-oK-a1C">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="eYj-fh-tAX">
+            <size key="intrinsicContentSize" width="41" height="91"/>
+        </designable>
+        <designable name="gYU-g7-Wjh">
+            <size key="intrinsicContentSize" width="42" height="95"/>
+        </designable>
+        <designable name="hS7-Hn-jgd">
+            <size key="intrinsicContentSize" width="39" height="89"/>
+        </designable>
+        <designable name="jjd-bF-CA1">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="jrd-IL-PfW">
+            <size key="intrinsicContentSize" width="45" height="55"/>
+        </designable>
+        <designable name="jzr-yc-C0H">
+            <size key="intrinsicContentSize" width="61" height="60"/>
+        </designable>
+        <designable name="kgD-5t-GWl">
+            <size key="intrinsicContentSize" width="45" height="85"/>
+        </designable>
+        <designable name="nyi-CE-q8r">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="p6A-4i-aOa">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="qa7-Nf-hbm">
+            <size key="intrinsicContentSize" width="33" height="60"/>
+        </designable>
+        <designable name="rYX-ej-Dcf">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="rmM-Ny-g0j">
+            <size key="intrinsicContentSize" width="30" height="60"/>
+        </designable>
+        <designable name="xxo-pv-ZFX">
+            <size key="intrinsicContentSize" width="54" height="60"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

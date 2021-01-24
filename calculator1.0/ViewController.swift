@@ -8,12 +8,48 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+   
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var result: UILabel!
+    var inmiddle = false
+    @IBAction func operand(_ sender: UIButton) {
+        let num = sender.currentTitle!
+        desc.text=brain.description
+        if inmiddle{
+            result.text=result.text!+num
+        }else{
+            result.text=num
+        }
+        inmiddle=true
+        
     }
-
-
+    
+    var getAns:Double{
+        get{
+            return Double(result.text!)!
+        }
+        set{
+            result.text=String(newValue)
+        }
+    }
+    var brain = CalculatorBrain()
+    @IBAction func clearAll(_ sender: UIButton) {
+        desc.text="0.0"
+        brain=CalculatorBrain()
+        getAns = 0.0
+        inmiddle=false
+    }
+    @IBAction func `operator`(_ sender: RoundButton) {
+        desc.text=brain.description
+        if inmiddle{
+            brain.setOperand(operand: getAns)
+            inmiddle=false
+        }
+        if let symbol = sender.currentTitle{
+            brain.performOperation(symbol: symbol)
+        }
+        getAns = brain.result
+    }
+    
 }
 
